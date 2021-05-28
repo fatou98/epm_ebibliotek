@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DashboardController!{% endblock %}
+
+{% block body %}
+<br>
+<div class="container-fluid">
+<div class="row">
+<div class="col-2">
+<h1 class="text-center">Tableau de bord</h1>
+  <div class="row" >
+    <div class="col-12 bg-info button-dash-left card">
+<a href="{{ path('user_index') }}">
+    Gestion utilisateurs </a></div>
+    <div class="col-12 bg-info button-dash-left card">
+    <a href="{{ path('livre_index') }}">
+
+    Gestion livres</a></div>
+    <div class="col-12 bg-info button-dash-left card">Gestion adhérents</div>
+    <div class="col-12 bg-info button-dash-left card">Gestion emprunt</div>
+  </div>
+  </div>
+<div class="col-10">
+{% block bodydash %}
+{% endblock %}
+
+</div>
+</div>
+
+{% endblock %}

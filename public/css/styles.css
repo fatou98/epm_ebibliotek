@@ -1,0 +1,26 @@
+.button-dash{
+    width: 170px;
+    height: 220px;
+    border-radius: 100%;
+    margin:20px;
+    padding-top: 85px;
+    text-align: center;
+    color:white;
+    font-weight:bold;
+    font-size: 1.3rem;
+}
+.button-dash-left a,
+    .button-dash a  {
+    color:white;
+}
+.button-dash-left{
+    width: 70px;
+    height: 120px;
+    border-radius: 10px;
+    margin:10px;
+    padding-top: 30px;
+    text-align: center;
+    color:white;
+    font-weight:bold;
+    font-size: 1.3rem;
+}

@@ -1,0 +1,50 @@
+{% extends 'basedash.html.twig' %}
+
+{% block title %}Livre{% endblock %}
+
+{% block bodydash %}
+    <h1>Livre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ livre.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ livre.nom }}</td>
+            </tr>
+            <tr>
+                <th>Maisonedition</th>
+                <td>{{ livre.maisonedition }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ livre.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Statutlivre</th>
+                <td>{{ livre.statutlivre }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ livre.disponibilite ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Datedentree</th>
+                <td>{{ livre.datedentree ? livre.datedentree|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ livre.category }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('livre_index') }}">back to list</a>
+
+    <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+
+    {{ include('livre/_delete_form.html.twig') }}
+{% endblock %}

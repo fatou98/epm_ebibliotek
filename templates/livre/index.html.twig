@@ -1,0 +1,47 @@
+{% extends 'basedash.html.twig' %}
+
+{% block title %}Livre index{% endblock %}
+
+{% block bodydash %}
+    <h1>Livre index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Maisonedition</th>
+                <th>Auteur</th>
+                <th>Statutlivre</th>
+                <th>Disponibilite</th>
+                <th>Datedentree</th>
+                <th>Category</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for livre in livres %}
+            <tr>
+                <td>{{ livre.id }}</td>
+                <td>{{ livre.nom }}</td>
+                <td>{{ livre.maisonedition }}</td>
+                <td>{{ livre.auteur }}</td>
+                <td>{{ livre.statutlivre }}</td>
+                <td>{{ livre.disponibilite ? 'Yes' : 'No' }}</td>
+                <td>{{ livre.datedentree ? livre.datedentree|date('Y-m-d') : '' }}</td>
+                <td>{{ livre.category }}</td>
+                <td>
+                    <a href="{{ path('livre_show', {'id': livre.id}) }}">show</a>
+                    <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('livre_new') }}">Create new</a>
+{% endblock %}
