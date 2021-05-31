@@ -1,0 +1,45 @@
+{% extends 'basedash.html.twig' %}
+
+{% block title %}Adherant index{% endblock %}
+
+{% block bodydash %}
+    <h1>Adherant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Adresse</th>
+                <th>MobileNumber</th>
+                <th>Statut</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for adherant in adherants %}
+            <tr>
+                <td>{{ adherant.id }}</td>
+                <td>{{ adherant.email }}</td>
+                <td>{{ adherant.firstname }}</td>
+                <td>{{ adherant.lastname }}</td>
+                <td>{{ adherant.adresse }}</td>
+                <td>{{ adherant.mobileNumber }}</td>
+                <td>{{ adherant.statut }}</td>
+                <td>
+                    <a href="{{ path('adherant_show', {'id': adherant.id}) }}">show</a>
+                    <a href="{{ path('adherant_edit', {'id': adherant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('adherant_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'basedash.html.twig' %}
+
+{% block title %}Emprunt{% endblock %}
+
+{% block bodydash %}
+    <h1>Emprunt</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ emprunt.id }}</td>
+            </tr>
+            <tr>
+                <th>StartDate</th>
+                <td>{{ emprunt.startDate ? emprunt.startDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndDate</th>
+                <td>{{ emprunt.endDate ? emprunt.endDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ emprunt.statut }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('emprunt_index') }}">back to list</a>
+
+    <a href="{{ path('emprunt_edit', {'id': emprunt.id}) }}">edit</a>
+
+    {{ include('emprunt/_delete_form.html.twig') }}
+{% endblock %}

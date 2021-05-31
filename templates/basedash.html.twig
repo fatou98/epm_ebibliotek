@@ -7,8 +7,10 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-2">
-<h1 class="text-center">Tableau de bord</h1>
   <div class="row" >
+    <div class="col-12 bg-info button-dash-left card">
+<a href="{{ path('dashboard') }}">
+    Tableau de bord </a></div>
     <div class="col-12 bg-info button-dash-left card">
 <a href="{{ path('user_index') }}">
     Gestion utilisateurs </a></div>
@@ -16,11 +18,20 @@
     <a href="{{ path('livre_index') }}">
 
     Gestion livres</a></div>
-    <div class="col-12 bg-info button-dash-left card">Gestion adhérents</div>
-    <div class="col-12 bg-info button-dash-left card">Gestion emprunt</div>
+    <div class="col-12 bg-info button-dash-left card">
+        <a href="{{ path('adherant_index') }}">
+
+    Gestion adhérants
+    </a>
+    </div>
+    <div class="col-12 bg-info button-dash-left card">
+            <a href="{{ path('emprunt_index') }}">
+
+    Gestion emprunt</a></div>
   </div>
   </div>
-<div class="col-10">
+<div class="col-10" style="padding:100px;">
+
 {% block bodydash %}
 {% endblock %}
 

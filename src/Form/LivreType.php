@@ -12,13 +12,13 @@ class LivreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom')
-            ->add('maisonedition')
-            ->add('auteur')
-            ->add('statutlivre')
-            ->add('disponibilite')
-            ->add('datedentree')
-            ->add('category')
+            ->add('nom',null,['attr'=> ['class'=>'col-lg-12 form-control','style'=>'margin-bottom:10px;']])
+            ->add('maisonedition',null,['attr'=> ['class'=>'col-lg-12 form-control','style'=>'margin-bottom:10px;']])
+            ->add('auteur',null,['attr'=> ['class'=>'col-lg-12 form-control','style'=>'margin-bottom:10px;']])
+            ->add('statutlivre',null,['attr'=> ['class'=>'col-lg-12 form-control','style'=>'margin-bottom:10px;']])
+            ->add('disponibilite',null,['attr'=> ['class'=>'col-lg-12 form-control','style'=>'margin-bottom:10px;']])
+            ->add('datedentree',null,['attr'=> ['class'=>'col-lg-12 form-control','style'=>'margin-bottom:10px;']])
+            ->add('category',null,['attr'=> ['class'=>'col-lg-12 form-control','style'=>'margin-bottom:10px;']])
         ;
     }
 
