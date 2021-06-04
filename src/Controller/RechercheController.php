@@ -20,12 +20,17 @@ class RechercheController extends AbstractController
                 $livres=$livreRepository->findBy(['nom'=>$name]);
                 return $this->render('recherche/index.html.twig', [
                     'controller_name' => 'RechercheController',
-                    'livres'=>$livres
+                    'livres'=>$livres,
+            "user"=>$this->getUser()
+
+
                 ]);
         }else{
             return $this->render('recherche/index.html.twig', [
                 'controller_name' => 'RechercheController',
-                'livres'=>[]
+                'livres'=>[],
+            "user"=>$this->getUser()
+
             ]);
         }
 

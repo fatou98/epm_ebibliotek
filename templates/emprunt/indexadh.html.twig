@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>StartDate</th>
                 <th>EndDate</th>
+                <th>Livre</th>
                 <th>Statut</th>
                 <th>actions</th>
             </tr>
@@ -21,7 +22,16 @@
                 <td>{{ emprunt.id }}</td>
                 <td>{{ emprunt.startDate ? emprunt.startDate|date('Y-m-d') : '' }}</td>
                 <td>{{ emprunt.endDate ? emprunt.endDate|date('Y-m-d') : '' }}</td>
-                <td>{{ emprunt.statut }}</td>
+                <td>{{ emprunt.livre.nom }}</td>
+                {% if emprunt.statut==1  %}
+                <td>En cours</td>
+                    
+                {% endif %}
+                <td>
+                 {% if emprunt.statut==0  %}
+                <td>Rendu</td>
+                    
+                {% endif %}
                 <td>
                     <a href="{{ path('emprunt_show', {'id': emprunt.id}) }}">show</a>
                     <a href="{{ path('emprunt_edit', {'id': emprunt.id}) }}">edit</a>
